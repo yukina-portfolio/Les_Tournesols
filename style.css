@@ -1,0 +1,565 @@
+@charset "UTF-8";
+
+/* The settings to apply to all pages */
+
+html {
+  font-family: "Dancing Script", "Kaisei Decol", serif;
+  font-size: 16px;
+  background-color: #ecc656;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.big {
+  font-size: 3rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.align {
+  align-items: center;
+}
+
+.content {
+  margin: 10% 0;
+}
+
+.border {
+  border-bottom: 1px solid #8f6552;
+  margin-bottom: 3%;
+}
+
+.bottom {
+  margin-bottom: 3%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
+.flex div {
+  flex: 1;
+}
+
+.hyphen {
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 1%;
+}
+
+.hyphen div {
+  flex: initial;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 3%;
+}
+
+/* Apply to all pages ‐ header */
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+  text-decoration: none;
+}
+
+/* Apply to all pages ‐ hero */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fadeIn 5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+h1 {
+  position: absolute;
+  font-size: 5rem;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: fadeIn 5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.honey {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  top: 20%;
+  left: 10%;
+  z-index: 1;
+  animation-name: fadeup;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to all pages ‐ main */
+
+main {
+  margin: 5%;
+}
+
+main img {
+  margin: 5% 0;
+}
+
+.fuwafuwa {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  margin: 0;
+  animation: fuwafuwa 3s ease-in-out infinite alternate;
+}
+
+.bee {
+  top: -3%;
+  left: -3%;
+}
+
+.mnbee {
+  top: -8%;
+  left: -5%;
+}
+
+.leaf {
+  bottom: -5%;
+  right: -3%;
+}
+
+.mnleaf {
+  bottom: -6%;
+  right: -5%;
+}
+
+.leaf1 {
+  top: 10%;
+  right: 30%;
+}
+
+.flower {
+  top: -5%;
+  left: -3%;
+}
+
+.flower1 {
+  top: 5%;
+  left: 28%;
+}
+
+.flower2 {
+  width: 50px;
+  top: 15%;
+  left: 33%;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+.back {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 5%;
+  margin: 5% 0;
+}
+
+.caution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caution img {
+  width: 10%;
+  height: auto;
+}
+
+/* index.html */
+
+.slides {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 15s infinite ease-in-out;
+}
+
+.slide1 { background-image: url('images/hero1.jpg'); animation-delay: 0s; }
+.slide2 { background-image: url('images/hero2.jpg'); animation-delay: 5s; }
+.slide3 { background-image: url('images/hero3.jpg'); animation-delay: 10s; }
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.pot {
+  width: 30%;
+  height: auto;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pot:hover {
+  animation: poyopoyo 2s ease-out infinite;
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
+
+/* introduction.html */
+
+.hero.introduction {
+  background-image: url(images/hero4.png);
+}
+
+.honey.introduction {
+  top: 35%;
+  right: 10%;
+  left: auto;
+}
+
+.back.recipe {
+  padding: 0;
+  padding-left: 3%;
+}
+
+/* contact.html */
+
+.hero.contact {
+  background-image: url(images/hero5.webp);
+}
+
+.story {
+  margin: 0 25%;
+}
+
+form {
+  font-size: 1.5rem;
+  padding: 0 30%;
+}
+
+#kind {
+  color: black;
+}
+
+input[type="text"], textarea, select {
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+textarea {
+  background-color: white;
+  height: 200px;
+}
+
+select {
+  font-family: "Kaisei Decol";
+}
+
+button {
+  font-size: 1.5rem;
+  font-family: "Kaisei Decol", serif;
+  color: white;
+  background-color: rgba(143, 101, 82, 0.5);
+  border: none;
+  border-radius: 15px;
+  padding: 2% 4%;
+  margin: 0 40%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #8f6552;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #8f6552;
+  padding: 20px;
+}
+
+/* Apply to all pages ‐ footer */
+
+footer {
+  position: relative;
+  color: white;
+  background-color: #8f6552;
+}
+
+.favicon {
+  width: 10%;
+  height: auto;
+  display: inline-block;
+}
+
+.seedlings img {
+  width: 5%;
+  height: auto;
+}
+
+.totop {
+  display: block;
+  color: white !important;;
+  background-color: #8f6552;
+  width: fit-content;
+  padding: 1%;
+  margin: 0 auto;
+}
+
+/* Mobile support */
+@media(max-width: 767px) {
+  /* The settings to apply to all pages */
+
+  html {
+    font-size: clamp(12px, 2vw, 18px);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: block;
+  }
+
+  .flex div {
+    flex: initial;
+  }
+
+  .hyphen.index {
+    justify-content: center;
+  }
+
+  /* Apply to all pages ‐ header */
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+
+  /* Apply to all pages ‐ hero */
+
+  .hero {
+    height: 80vh;
+  }
+
+  h1 {
+    font-size: 5rem;
+    white-space: nowrap;
+  }
+
+  .honey {
+    top: 3%;
+    right: 3%;
+    left: auto;
+  }
+
+  /* Apply to all pages ‐ main */
+
+  .fuwafuwa {
+    width: 50px;
+  }
+
+  .bee {
+    top: -1%;
+    left: -1%;
+  }
+
+  .mnbee {
+    top: -3%;
+    left: -3%;
+  }
+
+  .leaf {
+    bottom: -1%;
+    right: 0;
+  }
+
+  .leaf1 {
+    top: 6%;
+    width: 30px;
+  }
+
+  .mnleaf {
+    bottom: -5%;
+  }
+
+  .flower1 {
+    top: 3%;
+    width: 30px;
+  }
+
+  .flower2 {
+    top: 7%;
+    width: 20px;
+  }
+
+  .rankings {
+    border-radius: 30px;
+  }
+
+  /* introduction.html */
+
+  .honey.introduction {
+    top: 10%;
+    left: 10%;
+  }
+
+  /* contact.html */
+
+  .honey.contact {
+    top: 15%;
+    left: 10%;
+  }
+
+  .story {
+    margin: 0;
+  }
+
+  form {
+    padding: 0 10%;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  /* Apply to all pages ‐ footer */
+
+  .seedlings {
+    flex-wrap: nowrap;
+  }
+}
